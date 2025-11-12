@@ -1,6 +1,295 @@
+html {
+    background-image: url("../images/site/small_check.png"); /* tu imagen */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Fija el fondo */
+    height: 100%;
+    overflow: auto;
+}
+
 /******* Change Box Model ***************/
 *,
 *:before,
 *:after {
   box-sizing: border-box;
+}
+
+body{
+  max-width: 840px;
+  margin: auto;
+  background: white;
+  border: rgb(21, 193, 223) solid 4px;
+  border-radius: 2px;
+  padding: 8px;
+  margin-top: 10px;
+  margin-bottom: 250px;
+  font-family: "Raleway", sans-serif;
+}
+
+#top-header{
+  display: flex;
+  justify-content: space-between;
+}
+
+.siteName a{
+  text-decoration: none;
+  font-size: 180%;
+  color: black;
+}
+
+span a:hover{
+  color: rgb(167, 167, 4);
+  border-bottom: 2px solid rgb(167, 167, 4);
+}
+
+#tools a{
+  text-decoration: none;
+  color: black;
+}
+
+#tools a:hover{
+  color: rgb(167, 167, 4);
+  border-bottom: 2px solid rgb(167, 167, 4);
+}
+
+.ulnav{
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  padding-right: 60px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  background: black;
+  color: white;
+}
+
+.hero {
+  position: relative;
+  width: max-content;
+}
+
+.hero-img {
+  display: block;
+  width: 600px;
+  margin-left: 11%;
+}
+
+.hero-box {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: rgba(255, 255, 255, 0.6);
+  padding: 20px;
+  backdrop-filter: blur(0.5px); 
+}
+
+.hero-box h2 {
+  color: #0aa6d4;
+  margin: 0 0 10px 0;
+}
+
+.hero-btn {
+  background: #00a6d6;
+  color: black;
+  border: none;
+  padding: 10px 20px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.hero-btn:hover {
+  background: #007ea4;
+}
+
+.hero-text{
+  color: #007ea4;
+}
+
+.upgrades-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.upgrade-card{
+  text-align: center;
+}
+
+.upgrade-image{
+  background-color: #00a6d6;
+  max-width: 90%;
+  max-height: 100px;
+}
+
+.twoparts{
+  display: flex;
+  justify-content: space-between;
+}
+
+.cardone{
+  padding-left: 10px;
+}
+
+.cardtwo{
+  padding-right: 40px;
+}
+
+.points li{
+  padding: 7px;
+}
+
+/* ============================================ */
+/* RESPONSIVE DESIGN - Media Queries */
+/* ============================================ */
+
+/* Tablets y pantallas medianas (max 768px) */
+@media screen and (max-width: 768px) {
+  html {
+    background-image: none;
+    background-color: #f0f0f0;
+  }
+
+  body {
+    margin: 0;
+    margin-bottom: 50px;
+    border-width: 2px;
+    padding: 10px;
+  }
+
+  .siteName a {
+    font-size: 150%;
+  }
+
+  .ulnav {
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 10px;
+    gap: 10px;
+  }
+
+  .hero {
+    max-width: 100%;
+  }
+
+  .hero-box {
+    position: static;
+    background: rgba(255, 255, 255, 0.9);
+    margin-top: 10px;
+    padding: 15px;
+    max-width: 100%;
+  }
+
+  .twoparts {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .cardone, .cardtwo {
+    padding: 0 10px;
+  }
+
+  .upgrades-grid {
+    gap: 10px;
+  }
+
+  .hero-img{
+    width: 100%;
+  }
+
+  .hero-box {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: rgba(255, 255, 255, 0.6);
+    padding: 20px;
+    backdrop-filter: blur(0.5px); 
+  }
+  .twoparts {
+  display: flex;  /* ← DEBE estar presente */
+  flex-direction: column;  /* ← Para móvil */
+  /* resto de tus estilos */
+}
+  .cardone {
+    /* tus estilos actuales */
+    order: 2;  /* ← Añade esto: hace que Upgrades aparezca SEGUNDO */
+  }
+
+  .cardtwo {
+    /* tus estilos actuales */
+    order: 1;  /* ← Añade esto: hace que Reviews aparezca PRIMERO */
+  }
+
+  .upgrades-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+}
+
+/* Móviles pequeños (max 480px) */
+@media screen and (max-width: 480px) {
+  html {
+    background-image: none;
+  }
+
+  body {
+    padding: 5px;
+    margin-bottom: 30px;
+  }
+
+  #top-header {
+    text-align: center;
+    gap: 10px;
+  }
+
+  .siteName a {
+    font-size: 130%;
+  }
+
+  .ulnav {
+    align-items: center;
+    gap: 8px;
+    padding: 10px;
+    padding-right: 10px;
+  }
+
+  .hero-box {
+    padding: 10px;
+  }
+
+  .hero-btn {
+    padding: 12px;
+  }
+
+  .upgrades-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .upgrade-image {
+    height: 120px;
+  }
+
+  .twoparts {
+    display: flex;  /* ← DEBE estar presente */
+    flex-direction: column;  /* ← Para móvil */
+    /* resto de tus estilos */
+  }
+
+  .cardone {
+    /* tus estilos actuales */
+    order: 2;  /* ← Añade esto: hace que Upgrades aparezca SEGUNDO */
+  }
+
+  .cardtwo {
+    /* tus estilos actuales */
+    order: 1;  /* ← Añade esto: hace que Reviews aparezca PRIMERO */
+  }
+
+  .upgrades-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
 }
