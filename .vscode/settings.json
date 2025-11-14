@@ -1,0 +1,19 @@
+{
+    "sqltools.connections": [
+        {
+            "pgOptions": {
+                "ssl": {
+                    "rejectUnauthorized": true
+                }
+            },
+            "ssh": "Disabled",
+            "previewLimit": 50,
+            "server": "localhost",
+            "driver": "PostgreSQL",
+            "name": "cse 340 database",
+            "database": "cse340database_bhfs",
+            "username": "brucemel",
+            "connectString": "postgresql://brucemel:veYnWk9dP5oaKO1Yp91xtA5rgTDlUGEp@dpg-d4bdvfmr433s739ael7g-a.oregon-postgres.render.com/cse340database_bhfs"
+        }
+    ]
+}
