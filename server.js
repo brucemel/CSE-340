@@ -25,10 +25,10 @@ app.set("layout", "./layouts/layout")
 app.use(express.static('public'));
 
 // Index route
-app.get("/", baseController.buildHome)
+app.get("/", utilities.handleErrors(baseController.buildHome))
 
 //inventory routes
-app.get("/", utilities.handleErrors(baseController.buildHome))
+app.use('/inv', inventoryRoute)
 
 app.use(async (req, res, next) => {
   next({status: 404, message: 'Sorry, we appear to have lost that page.'
