@@ -1,9 +1,9 @@
 html {
-    background-image: url("../images/site/small_check.png"); /* tu imagen */
+    background-image: url("../images/site/small_check.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-attachment: fixed; /* Fija el fondo */
+    background-attachment: fixed;
     height: 100%;
     overflow: auto;
 }
@@ -61,6 +61,10 @@ span a:hover{
   padding-top: 5px;
   padding-bottom: 5px;
   background: black;
+}
+
+.ulnav a{
+  text-decoration: none;
   color: white;
 }
 
@@ -137,6 +141,28 @@ span a:hover{
 
 .points li{
   padding: 7px;
+}
+
+#inv-display{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.cardscar{
+  border: solid 1px rgba(0, 0, 0, 0.204);
+  list-style: none;
+  text-align: center;
+  margin: 10px;
+  border-radius: 5px;
+}
+
+.cardscar img{
+  width: 100%;
+  border-radius: 5px;
+}
+
+hr{
+  border-bottom: solid 3px black;
 }
 
 /* ============================================ */
@@ -225,6 +251,11 @@ span a:hover{
     grid-template-columns: repeat(2, 1fr);
     gap: 15px;
   }
+  
+  #inv-display{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 /* Móviles pequeños (max 480px) */
@@ -291,5 +322,10 @@ span a:hover{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 15px;
+  }
+
+  #inv-display{
+  display: grid;
+  grid-template-columns: 1fr;
   }
 }

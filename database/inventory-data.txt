@@ -5,7 +5,7 @@ INSERT INTO public.inventory (
     inv_model,
     inv_year,
     inv_description,
-    inv_image,
+    inv_img,
     inv_thumbnail,
     inv_price,
     inv_miles,
