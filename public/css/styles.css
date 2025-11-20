@@ -366,4 +366,9 @@ hr{
   width: 100%;
   padding-right: 5px;
   }
+
+  .vehicle-detail{
+  display: flex;
+  flex-direction: column;
+  }
 }
