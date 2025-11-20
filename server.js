@@ -32,7 +32,7 @@ app.use('/inv', inventoryRoute)
 
 // Intentional Error Route - for testing error handling
 app.get("/trigger-error", utilities.handleErrors(async (req, res, next) => {
-  throw new Error("Intentional 500 error - testing error handler")
+  throw new Error("Error 404")
 }))
 
 app.use(async (req, res, next) => {
