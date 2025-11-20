@@ -169,11 +169,36 @@ hr{
   width: 100%;
 }
 
+.vehicle-detail{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.vehicle-image img{
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 5px;
+}
+
+.vehicle-info{
+  margin-top: -25px;
+}
+
+.vehicle-price{
+  background: rgba(0, 0, 0, 0.078);
+  padding: 10px;
+}
+
+.vehicle-color{
+  background: rgba(0, 0, 0, 0.078);
+  padding: 10px;
+}
+
 /* ============================================ */
 /* RESPONSIVE DESIGN - Media Queries */
 /* ============================================ */
 
-/* Tablets y pantallas medianas (max 768px) */
+/* middle screns (max 768px) */
 @media screen and (max-width: 768px) {
   html {
     background-image: none;
@@ -236,18 +261,15 @@ hr{
     backdrop-filter: blur(0.5px); 
   }
   .twoparts {
-  display: flex;  /* ← DEBE estar presente */
-  flex-direction: column;  /* ← Para móvil */
-  /* resto de tus estilos */
+  display: flex;
+  flex-direction: column; 
 }
   .cardone {
-    /* tus estilos actuales */
-    order: 2;  /* ← Añade esto: hace que Upgrades aparezca SEGUNDO */
+    order: 2;
   }
 
   .cardtwo {
-    /* tus estilos actuales */
-    order: 1;  /* ← Añade esto: hace que Reviews aparezca PRIMERO */
+    order: 1;
   }
 
   .upgrades-grid {
@@ -260,9 +282,14 @@ hr{
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   }
+
+  .vehicle-detail{
+  display: flex;
+  flex-direction: column;
+  }
 }
 
-/* Móviles pequeños (max 480px) */
+/* small moviles (max 480px) */
 @media screen and (max-width: 480px) {
   html {
     background-image: none;
@@ -307,19 +334,16 @@ hr{
   }
 
   .twoparts {
-    display: flex;  /* ← DEBE estar presente */
-    flex-direction: column;  /* ← Para móvil */
-    /* resto de tus estilos */
+    display: flex;
+    flex-direction: column;  
   }
 
   .cardone {
-    /* tus estilos actuales */
-    order: 2;  /* ← Añade esto: hace que Upgrades aparezca SEGUNDO */
+    order: 2; 
   }
 
   .cardtwo {
-    /* tus estilos actuales */
-    order: 1;  /* ← Añade esto: hace que Reviews aparezca PRIMERO */
+    order: 1;
   }
 
   .upgrades-grid {
@@ -331,5 +355,15 @@ hr{
   #inv-display{
   display: grid;
   grid-template-columns: 1fr;
+  }
+
+  .vehicle-detail{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  }
+
+  .vehicle-image img{
+  width: 100%;
+  padding-right: 5px;
   }
 }

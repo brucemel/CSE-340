@@ -30,6 +30,11 @@ app.get("/", utilities.handleErrors(baseController.buildHome))
 //inventory routes
 app.use('/inv', inventoryRoute)
 
+// Intentional Error Route - for testing error handling
+app.get("/trigger-error", utilities.handleErrors(async (req, res, next) => {
+  throw new Error("Intentional 500 error - testing error handler")
+}))
+
 app.use(async (req, res, next) => {
   next({status: 404, message: 'Sorry, we appear to have lost that page.'
   })

@@ -57,12 +57,54 @@ Util.buildClassificationGrid = async function(data){
   return grid
 }
 
+/* **************************************
+* Build the vehicle detail view HTML
+* ************************************ */
+Util.buildVehicleDetail = function(vehicle) {
+  // Como inv_image no existe, construir la ruta desde inv_thumbnail
+  // Quitar el "-tn" para obtener la imagen grande
+  let imagePath = vehicle.inv_thumbnail
+  if (imagePath) {
+    imagePath = imagePath.replace('-tn', '')  // batmobile-tn.jpg → batmobile.jpg
+  } else {
+    imagePath = '/images/no-image.jpg'
+  }
+  
+  let detail = `
+    <div class="vehicle-detail">
+      <div class="vehicle-image">
+        <img src="${imagePath}" 
+             alt="Image of ${vehicle.inv_make} ${vehicle.inv_model} on CSE Motors">
+      </div>
+      <div class="vehicle-info">
+        <h2>${vehicle.inv_make} ${vehicle.inv_model} Details</h2>
+        
+        <p class="vehicle-price">
+          <strong>Price:</strong> $${new Intl.NumberFormat('en-US').format(vehicle.inv_price)}
+        </p>
+        
+        <p class="vehicle-description">
+          <strong>Description:</strong> ${vehicle.inv_description}
+        </p>
+        
+        <p class="vehicle-color">
+          <strong>Color:</strong> ${vehicle.inv_color}
+        </p>
+        
+        <p class="vehicle-miles">
+          <strong>Miles:</strong> ${new Intl.NumberFormat('en-US').format(vehicle.inv_miles)}
+        </p>
+      </div>
+    </div>
+  `
+  return detail
+}
+
 /* ****************************************
  * Middleware For Handling Errors
  * Wrap other function in this for 
  * General Error Handling
  **************************************** */
 Util.handleErrors = fn => (req, res, next) => Promise.resolve(fn(req, res, next)).catch(next)
-
 
 module.exports = Util
