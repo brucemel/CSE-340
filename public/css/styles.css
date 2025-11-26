@@ -194,6 +194,12 @@ hr{
   padding: 10px;
 }
 
+.notice{
+  color: red;
+  font-style: italic;
+  font-weight: bold;
+}
+
 /* ============================================ */
 /* RESPONSIVE DESIGN - Media Queries */
 /* ============================================ */
