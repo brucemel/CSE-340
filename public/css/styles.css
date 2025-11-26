@@ -206,7 +206,7 @@ hr{
   width: 50%;
   margin: auto;
   padding: 20px;
-  background-color: rgb(9, 37, 70);
+  background-color: rgb(3, 90, 144);
   padding-bottom: 50px;
   border-radius: 10px;
   margin-bottom: 20px;
@@ -235,13 +235,53 @@ input{
 }
 
 .signup a{
-  text-decoration: none;
   color: white;
 }
 
 label{
   color: white;
   padding: 5px
+}
+
+.divre{
+  width: 50%;
+  margin: auto;
+  background-color: #00a6d6;
+  padding: 10px;
+    border: 1px solid #00a6d6;
+  border-radius: 5px;
+}
+
+#registrationForm{
+  display: grid;
+  border: 2.5px solid white;
+  padding: 10px;
+}
+
+.emcabezado{
+  font-style: italic;
+  font-weight: bold;
+}
+
+.labelre{
+  color: black;
+  font-weight: bold;
+}
+
+#pswdBtn{
+  width: 20%;
+}
+
+#botonreg{
+  width: 20%;
+  padding: 10px;
+  margin: 5px;
+  margin: auto;
+  border: 1px solid black;
+  border-radius: 10px;
+  background-color: rgb(3, 90, 144);
+  color: white;
+  font-weight: bold;
 }
 
 /* ============================================ */
