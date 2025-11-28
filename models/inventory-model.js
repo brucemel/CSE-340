@@ -39,7 +39,7 @@ async function addInventory(
       (classification_id, inv_make, inv_model, inv_description, inv_img, inv_thumbnail, inv_price, inv_year, inv_miles, inv_color) 
       VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING *`
     
-    console.log("Attempting to insert with classification_id:", classification_id) // ✅ Log para debug
+    console.log("Attempting to insert with classification_id:", classification_id)
     
     const result = await pool.query(sql, [
       classification_id, 
@@ -54,12 +54,12 @@ async function addInventory(
       inv_color
     ])
     
-    console.log("Insert successful:", result.rows[0]) // ✅ Log del resultado
+    console.log("Insert successful:", result.rows[0])
     return result
     
   } catch (error) {
-    console.error("❌ addInventory error:", error.message) // ✅ IMPORTANTE: Log del error
-    console.error("Full error:", error) // ✅ Error completo
+    console.error("❌ addInventory error:", error.message)
+    console.error("Full error:", error)
     return null
   }
 }

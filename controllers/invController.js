@@ -12,14 +12,13 @@ invCont.buildByClassificationId = async function (req, res, next) {
   const grid = await utilities.buildClassificationGrid(data)
   let nav = await utilities.getNav()
   
-  // ✅ SOLUCIÓN: Manejar categorías sin vehículos
   let className = "Unknown"
   
   if (data && data.length > 0) {
-    // Si hay vehículos, usar el nombre de la clasificación del primer vehículo
+
     className = data[0].classification_name
   } else {
-    // Si no hay vehículos, buscar el nombre directamente
+
     const classifications = await invModel.getClassifications()
     const foundClass = classifications.rows.find(
       c => c.classification_id == classification_id

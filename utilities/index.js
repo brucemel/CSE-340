@@ -30,7 +30,7 @@ Util.getNav = async function (req, res, next) {
 * Build the classification view HTML
 * ************************************ */
 Util.buildClassificationGrid = async function(data){
-  let grid = ''  // ✅ CAMBIO: Inicializar como string vacío en lugar de undefined
+  let grid = ''  
   
   if(data.length > 0){
     grid = '<ul id="inv-display">'
@@ -55,7 +55,7 @@ Util.buildClassificationGrid = async function(data){
     })
     grid += '</ul>'
   } else { 
-    grid = '<p class="notice">Sorry, no matching vehicles could be found.</p>'  // ✅ CAMBIO: Usar = en lugar de +=
+    grid = '<p class="notice">Sorry, no matching vehicles could be found.</p>'
   }
   return grid
 }
@@ -86,11 +86,10 @@ Util.buildClassificationList = async function (classification_id = null) {
 * Build the vehicle detail view HTML
 * ************************************ */
 Util.buildVehicleDetail = function(vehicle) {
-  // Como inv_image no existe, construir la ruta desde inv_thumbnail
-  // Quitar el "-tn" para obtener la imagen grande
+
   let imagePath = vehicle.inv_thumbnail
   if (imagePath) {
-    imagePath = imagePath.replace('-tn', '')  // batmobile-tn.jpg → batmobile.jpg
+    imagePath = imagePath.replace('-tn', '') 
   } else {
     imagePath = '/images/no-image.jpg'
   }
