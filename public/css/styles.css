@@ -284,6 +284,51 @@ label{
   font-weight: bold;
 }
 
+/* Password requirements text */
+.password-requirements {
+    display: block;
+    font-size: 12px;
+    color: #000;
+    margin-bottom: 8px;
+    margin-top: -5px;
+    font-style: italic;
+    line-height: 1.4;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+/* Estado inicial - blancos */
+input {
+  background-color: white;
+  border: 1px solid #ccc;
+  transition: all 0.2s ease;
+}
+
+/* Desactivar estilos automáticos del navegador */
+input:invalid {
+  background-color: white;
+  border: 1px solid #ccc;
+  box-shadow: none;
+}
+
+/* ROJO - Solo cuando tiene foco Y es inválido */
+input:focus:invalid {
+  background-color: #ffcccc;
+  border: 2px solid red;
+}
+
+/* VERDE - Solo cuando tiene foco Y es válido Y tiene contenido */
+input:focus:not(:placeholder-shown):valid {
+  background-color: #ccffcc;
+  border: 2px solid green;
+}
+
+/* BLANCO - Cuando NO tiene foco (vuelve a normal) */
+input:not(:focus) {
+  background-color: white;
+  border: 1px solid #ccc;
+}
+
 /* ============================================ */
 /* RESPONSIVE DESIGN - Media Queries */
 /* ============================================ */
@@ -460,5 +505,21 @@ label{
   .vehicle-detail{
   display: flex;
   flex-direction: column;
+  }
+
+  .divre{
+    width: 75%;
+  }
+
+  #loginForm{
+    width: 75%;
+  }
+
+  #pswdBtn{
+    width: 30%
+  }
+
+  #botonreg{
+    width: 30%;
   }
 }

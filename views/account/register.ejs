@@ -6,25 +6,38 @@
 
 <%- messages() %>
 
+<% if (errors) { %>
+  <ul class="notice">
+    <% errors.array().forEach(error => { %>
+      <li><%= error.msg %></li>
+    <% }) %>
+  </ul>
+<% } %>
+
 <div class="divre">
     <p class="emcabezado">ALL FIELDS ARE REQUIRED</p>
 
     <form id="registrationForm" action="/account/register" method="post">
     
         <label for="account_firstname" class="labelre">First Name:</label>
-        <input type="text" id="account_firstname" name="account_firstname" required>
+        <input type="text" name="account_firstname" id="accountFirstname" required value="<%= locals.account_firstname %>">
         
         <label for="account_lastname" class="labelre">Last Name:</label>
-        <input type="text" id="account_lastname" name="account_lastname" required>
+        <input type="text" name="account_lastname" id="accountLastname" required value="<%= locals.account_lastname %>">
         
-        <label for="account_email" class="labelre">Email:</label>
-        <input type="email" id="account_email" name="account_email" required placeholder="Enter a valid email address">
+        <label for="account_email" class="labelre">Email Address:</label>
+        <input type="email" name="account_email" id="accountEmail" required value="<%= locals.account_email %>">
         
         <label for="account_password" class="labelre">Password:</label>
-        <input type="password" id="account_password" name="account_password" required 
-                pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{12,}$">
+        <input 
+            type="password" 
+            id="account_password" 
+            name="account_password" 
+            required 
+            pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{12,}$"
+            placeholder="Enter a strong password">
         <span class="password-requirements">
-            Password must be minimum of 12 characters and include 1 capital letter, 1 number and 1 special characters.
+            Passwords must be minimum of 12 characters and include 1 capital letter, 1 number and 1 special character.
         </span>
         
         <button type="button" id="pswdBtn">Show Password</button>
@@ -41,11 +54,11 @@
             const pswdInput = document.getElementById("account_password");
             const type = pswdInput.getAttribute("type");
             if (type == "password") {
-            pswdInput.setAttribute("type", "text");
-            pswdBtn.textContent = "Hide Password";
+                pswdInput.setAttribute("type", "text");
+                pswdBtn.textContent = "Hide Password";
             } else {
-            pswdInput.setAttribute("type", "password");
-            pswdBtn.textContent = "Show Password";
+                pswdInput.setAttribute("type", "password");
+                pswdBtn.textContent = "Show Password";
             }
         });
     </script>
