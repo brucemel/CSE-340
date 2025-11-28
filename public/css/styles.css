@@ -248,7 +248,7 @@ label{
   margin: auto;
   background-color: #00a6d6;
   padding: 10px;
-    border: 1px solid #00a6d6;
+  border: 1px solid #00a6d6;
   border-radius: 5px;
 }
 
@@ -297,36 +297,116 @@ label{
     margin-top: 5px;
 }
 
-/* Estado inicial - blancos */
 input {
   background-color: white;
   border: 1px solid #ccc;
   transition: all 0.2s ease;
 }
 
-/* Desactivar estilos automáticos del navegador */
 input:invalid {
   background-color: white;
   border: 1px solid #ccc;
   box-shadow: none;
 }
 
-/* ROJO - Solo cuando tiene foco Y es inválido */
 input:focus:invalid {
   background-color: #ffcccc;
   border: 2px solid red;
 }
 
-/* VERDE - Solo cuando tiene foco Y es válido Y tiene contenido */
 input:focus:not(:placeholder-shown):valid {
   background-color: #ccffcc;
   border: 2px solid green;
 }
 
-/* BLANCO - Cuando NO tiene foco (vuelve a normal) */
 input:not(:focus) {
   background-color: white;
   border: 1px solid #ccc;
+}
+
+.add-inventory-container{
+  width: 55%;
+  margin: auto;
+  background-color: #00a6d6;
+  padding: 15px;
+  border: #00a6d6;
+  border-radius: 7px;
+}
+
+#addInventoryForm{
+  display: grid;
+  border: 1px solid white;
+  padding: 5px;
+}
+
+#addInventoryForm label{
+  color: black;
+}
+
+#addInventoryForm input{
+  padding: 1px;
+  border: 1px;
+  border-radius: 0;
+}
+
+#classificationList{
+  width: 40%;
+}
+
+.inputinv{
+  width: 60%;
+}
+
+.inputimginv{
+  width: 92%;
+}
+
+.inputnumbinv{
+  width: 30%;
+}
+
+.botoninvsu{
+  margin-top: 15px;
+  width: 25%;
+  padding: 0;
+}
+
+#divclassification{
+  width: 50%;
+  margin: auto;
+  background-color: #007ea4;
+  border: 1px solid #007ea4;
+  border-radius: 7px;
+  padding: 10px;
+}
+
+#addClassificationForm{
+  border:1px solid white;
+  padding: 5px;
+  display: grid;
+}
+
+#addClassificationForm label{
+  color: black;
+  font-weight: bold;
+}
+
+.requirement{
+  font-style: italic;
+}
+
+#classification_name{
+  margin-bottom: 20px;
+  width: 50%;
+}
+
+#addClassificationForm button{
+  border-radius: 5px;
+  width: 40%;
+}
+
+.field-instruction{
+  font-style: italic;
 }
 
 /* ============================================ */
@@ -520,6 +600,15 @@ input:not(:focus) {
   }
 
   #botonreg{
+    width: 30%;
+  }
+
+  #addClassificationForm button{
+  border-radius: 5px;
+  width: 55%;
+  }
+
+  .botoninvsu{
     width: 30%;
   }
 }

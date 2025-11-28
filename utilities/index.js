@@ -1,4 +1,6 @@
 const invModel = require("../models/inventory-model")
+const jwt = require("jsonwebtoken")
+require("dotenv").config()
 const Util = {}
 
 /* ************************
@@ -28,7 +30,8 @@ Util.getNav = async function (req, res, next) {
 * Build the classification view HTML
 * ************************************ */
 Util.buildClassificationGrid = async function(data){
-  let grid
+  let grid = ''  // ✅ CAMBIO: Inicializar como string vacío en lugar de undefined
+  
   if(data.length > 0){
     grid = '<ul id="inv-display">'
     data.forEach(vehicle => { 
@@ -52,9 +55,31 @@ Util.buildClassificationGrid = async function(data){
     })
     grid += '</ul>'
   } else { 
-    grid += '<p class="notice">Sorry, no matching vehicles could be found.</p>'
+    grid = '<p class="notice">Sorry, no matching vehicles could be found.</p>'  // ✅ CAMBIO: Usar = en lugar de +=
   }
   return grid
+}
+
+/* ****************************************
+ * Build classification list for select dropdown
+ **************************************** */
+Util.buildClassificationList = async function (classification_id = null) {
+  let data = await invModel.getClassifications()
+  let classificationList =
+    '<select name="classification_id" id="classificationList" required>'
+  classificationList += "<option value=''>Choose a Classification</option>"
+  data.rows.forEach((row) => {
+    classificationList += '<option value="' + row.classification_id + '"'
+    if (
+      classification_id != null &&
+      row.classification_id == classification_id
+    ) {
+      classificationList += " selected "
+    }
+    classificationList += ">" + row.classification_name + "</option>"
+  })
+  classificationList += "</select>"
+  return classificationList
 }
 
 /* **************************************

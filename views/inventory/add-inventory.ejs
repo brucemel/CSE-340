@@ -1,0 +1,127 @@
+<% if (title) { %>
+  <h1><%= title %></h1>
+<% } else {
+  res.locals.title = "Add New Vehicle"
+} %>
+
+<% if (typeof errors !== 'undefined' && errors) { %>
+  <ul class="notice">
+    <% errors.array().forEach(error => { %>
+      <li><%= error.msg %></li>
+    <% }) %>
+  </ul>
+<% } %>
+
+<%- messages() %>
+
+<div class="add-inventory-container">
+  <p class="field-instruction">All fields are required.</p>
+  
+  <form id="addInventoryForm" action="/inv/add-inventory" method="post">
+
+      <!-- Classification -->
+      <label for="classificationList">Classification</label>
+      <%- classificationList %>
+      
+      <!-- Make -->
+      <label for="inv_make">Make</label>
+      <input 
+        type="text" 
+        id="inv_make" 
+        class="inputinv"
+        name="inv_make" 
+        required
+        minlength="3"
+        placeholder="Min of 3 characters"
+        value="<%= locals.inv_make %>">
+      
+      <!-- Model -->
+      <label for="inv_model">Model</label>
+      <input 
+        type="text" 
+        id="inv_model" 
+        class="inputinv"
+        name="inv_model" 
+        required
+        minlength="3"
+        placeholder="Min of 3 characters"
+        value="<%= locals.inv_model %>">
+      
+      <!-- Description -->
+      <label for="inv_description">Description</label>
+      <textarea 
+        id="inv_description" 
+        name="inv_description" 
+        required
+        rows="4"><%= locals.inv_description %></textarea>
+      
+      <!-- Image Path -->
+      <label for="inv_img">Image Path</label>
+      <input 
+        type="text" 
+        id="inv_img" 
+        class="inputimginv"
+        name="inv_img" 
+        required
+        value="<%= locals.inv_image || '/images/vehicles/no-image.png' %>">
+      
+      <!-- Thumbnail Path -->
+      <label for="inv_thumbnail">Thumbnail Path</label>
+      <input 
+        type="text" 
+        id="inv_thumbnail" 
+        class="inputimginv"
+        name="inv_thumbnail" 
+        required
+        value="<%= locals.inv_thumbnail || '/images/vehicles/no-image.png' %>">
+      
+      <!-- Price -->
+      <label for="inv_price">Price</label>
+      <input 
+        type="number" 
+        id="inv_price" 
+        class="inputnumbinv"
+        name="inv_price" 
+        required
+        step="0.01"
+        placeholder="decimal or integer"
+        value="<%= locals.inv_price %>">
+      
+      <!-- Year -->
+      <label for="inv_year">Year</label>
+      <input 
+        type="number" 
+        id="inv_year" 
+        class="inputnumbinv"
+        name="inv_year" 
+        required
+        min="1900"
+        max="2030"
+        placeholder="4-digit year"
+        value="<%= locals.inv_year %>">
+      
+      <!-- Miles -->
+      <label for="inv_miles">Miles</label>
+      <input 
+        type="number" 
+        id="inv_miles" 
+        class="inputnumbinv"
+        name="inv_miles" 
+        required
+        placeholder="digits only"
+        value="<%= locals.inv_miles %>">
+      
+      <!-- Color -->
+      <label for="inv_color">Color</label>
+      <input 
+        type="text" 
+        id="inv_color"
+        class="inputinv" 
+        name="inv_color" 
+        required
+        value="<%= locals.inv_color %>">
+      
+      <button class="botoninvsu" type="submit">Add Vehicle</button>
+
+  </form>
+</div>

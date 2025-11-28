@@ -8,6 +8,63 @@ async function getClassifications(){
 }
 
 /* ***************************
+ *  Add new classification
+ * ************************** */
+async function addClassification(classification_name){
+  try {
+    const sql = "INSERT INTO classification (classification_name) VALUES ($1) RETURNING *"
+    return await pool.query(sql, [classification_name])
+  } catch (error) {
+    return error.message
+  }
+}
+
+/* ***************************
+ *  Add new inventory item
+ * ************************** */
+async function addInventory(
+  classification_id, 
+  inv_make, 
+  inv_model, 
+  inv_description, 
+  inv_img, 
+  inv_thumbnail, 
+  inv_price, 
+  inv_year, 
+  inv_miles, 
+  inv_color
+){
+  try {
+    const sql = `INSERT INTO inventory 
+      (classification_id, inv_make, inv_model, inv_description, inv_img, inv_thumbnail, inv_price, inv_year, inv_miles, inv_color) 
+      VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING *`
+    
+    console.log("Attempting to insert with classification_id:", classification_id) // ✅ Log para debug
+    
+    const result = await pool.query(sql, [
+      classification_id, 
+      inv_make, 
+      inv_model, 
+      inv_description, 
+      inv_img, 
+      inv_thumbnail, 
+      inv_price, 
+      inv_year, 
+      inv_miles, 
+      inv_color
+    ])
+    
+    console.log("Insert successful:", result.rows[0]) // ✅ Log del resultado
+    return result
+    
+  } catch (error) {
+    console.error("❌ addInventory error:", error.message) // ✅ IMPORTANTE: Log del error
+    console.error("Full error:", error) // ✅ Error completo
+    return null
+  }
+}
+
+/* ***************************
  *  Get all inventory items and classification_name by classification_id
  * ************************** */
 async function getInventoryByClassificationId(classification_id) {
@@ -43,5 +100,7 @@ async function getInventoryById(inv_id) {
 module.exports = {
   getClassifications,
   getInventoryByClassificationId,
-  getInventoryById
+  getInventoryById,
+  addClassification,
+  addInventory
 };
