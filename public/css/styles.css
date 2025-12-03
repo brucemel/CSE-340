@@ -409,6 +409,48 @@ input:not(:focus) {
   font-style: italic;
 }
 
+.thclass{
+  padding: 1.5%;
+}
+
+#classificationList{
+  width: 25%;
+  background-color: rgba(56, 54, 54, 0.155);
+  padding: 5px;
+  border: 1px solid rgba(56, 54, 54, 0.155);
+  border-radius: 5px;
+}
+
+#add-inventory-container{
+  width: 55%;
+  margin: auto;
+  background-color: #00a6d6;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+#updateForm{
+  display: grid;
+  border: 1px solid white;
+  padding: 5px;
+
+}
+
+#updateForm label{
+  color: black;
+  font-weight: bold;
+}
+
+.field-instruction{
+  font-weight: bold;
+  padding-top: 20px;
+}
+
+select#classificationList,
+select[name="classification_id"] {
+  background-color: #f8f9fa;
+}
+
 /* ============================================ */
 /* RESPONSIVE DESIGN - Media Queries */
 /* ============================================ */

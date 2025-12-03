@@ -8,7 +8,6 @@ const invModel = require("../models/inventory-model")
  * ********************************* */
 validate.classificationRules = () => {
   return [
-    // classification_name is required and must contain only alphabetic characters
     body("classification_name")
       .trim()
       .isLength({ min: 1 })
@@ -43,62 +42,52 @@ validate.checkClassificationData = async (req, res, next) => {
  * ********************************* */
 validate.inventoryRules = () => {
   return [
-    // classification_id is required
     body("classification_id")
       .trim()
       .notEmpty()
       .withMessage("Please select a classification."),
 
-    // inv_make is required and must be at least 3 characters
     body("inv_make")
       .trim()
       .isLength({ min: 3 })
       .withMessage("Make must be at least 3 characters."),
 
-    // inv_model is required and must be at least 3 characters
     body("inv_model")
       .trim()
       .isLength({ min: 3 })
       .withMessage("Model must be at least 3 characters."),
 
-    // inv_description is required
     body("inv_description")
       .trim()
       .notEmpty()
       .withMessage("Description is required."),
 
-    // inv_image is required
-    body("inv_img")
+    body("inv_img")  // ← inv_img (correcto)
       .trim()
       .notEmpty()
       .withMessage("Image path is required."),
 
-    // inv_thumbnail is required
     body("inv_thumbnail")
       .trim()
       .notEmpty()
       .withMessage("Thumbnail path is required."),
 
-    // inv_price is required and must be a number
     body("inv_price")
       .trim()
       .isNumeric()
       .withMessage("Price must be a number."),
 
-    // inv_year is required and must be a 4-digit year
     body("inv_year")
       .trim()
       .isLength({ min: 4, max: 4 })
       .isNumeric()
       .withMessage("Year must be a 4-digit number."),
 
-    // inv_miles is required and must be a number
     body("inv_miles")
       .trim()
       .isNumeric()
       .withMessage("Miles must be a number."),
 
-    // inv_color is required
     body("inv_color")
       .trim()
       .notEmpty()
@@ -115,7 +104,7 @@ validate.checkInventoryData = async (req, res, next) => {
     inv_make, 
     inv_model, 
     inv_description, 
-    inv_img, 
+    inv_img,  // ← inv_img (correcto)
     inv_thumbnail, 
     inv_price, 
     inv_year, 
@@ -138,12 +127,57 @@ validate.checkInventoryData = async (req, res, next) => {
       inv_make,
       inv_model,
       inv_description,
-      inv_img,
+      inv_img,  // ← inv_img (correcto)
       inv_thumbnail,
       inv_price,
       inv_year,
       inv_miles,
       inv_color,
+    })
+    return
+  }
+  next()
+}
+
+/* ******************************
+ * Check update data and return errors to edit view
+ * ***************************** */
+validate.checkUpdateData = async (req, res, next) => {
+  const { 
+    inv_id,
+    inv_make, 
+    inv_model, 
+    inv_year,
+    inv_description,
+    inv_img,  // ← CAMBIO AQUÍ
+    inv_thumbnail,
+    inv_price,
+    inv_miles,
+    inv_color,
+    classification_id
+  } = req.body
+  let errors = []
+  errors = validationResult(req)
+  if (!errors.isEmpty()) {
+    let nav = await utilities.getNav()
+    const classificationSelect = await utilities.buildClassificationList(classification_id)
+    const itemName = `${inv_make} ${inv_model}`
+    res.render("inventory/edit-inventory", {
+      errors,
+      title: "Edit " + itemName,
+      nav,
+      classificationSelect,
+      inv_id,
+      inv_make,
+      inv_model,
+      inv_year,
+      inv_description,
+      inv_img,  // ← CAMBIO AQUÍ
+      inv_thumbnail,
+      inv_price,
+      inv_miles,
+      inv_color,
+      classification_id
     })
     return
   }

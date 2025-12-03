@@ -6,18 +6,22 @@
 
 <%- messages() %>
 
-<div class="management-container">
+<div class="vehicle-management">
   
   <ul class="management-links">
-    <li>
-      <a href="/inv/add-classification" title="Add a new classification">
-        Add New Classification
-      </a>
-    </li>
-    <li>
-      <a href="/inv/add-inventory" title="Add a new vehicle">
-        Add New Vehicle
-      </a>
-    </li>
+    <li><a href="/inv/add-classification">Add New Classification</a></li>
+    <li><a href="/inv/add-inventory">Add New Vehicle</a></li>
   </ul>
+  
+  <h2>Manage Inventory</h2>
+  
+  <p>Choose a classification to see those inventory items.</p>
+  
+  <%- classificationSelect %>
+  
+  <table id="inventoryDisplay"></table>
+  
+  <noscript>JavaScript must be enabled to use this page.</noscript>
 </div>
+
+<script src="../../js/inventory.js"></script>

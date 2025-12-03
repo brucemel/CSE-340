@@ -17,8 +17,11 @@ const utilities = require("./utilities/")
 const session = require('express-session')
 const pool = require('./database')
 const bodyParser = require("body-parser")
+const cookieParser = require("cookie-parser")
 
-//Middleware
+/* ***********************
+ * Middleware
+ *************************/
 app.use(session({
   store: new (require('connect-pg-simple')(session))({
     createTableIfMissing: true,
@@ -30,19 +33,23 @@ app.use(session({
   name: 'sessionId',
 }))
 
-//Express message middleware
-
+// Express Messages Middleware
 app.use(require('connect-flash')())
 app.use(function (req, res, next) {
   res.locals.messages = require('express-messages')(req, res)
   next()
 })
 
-//Body Parser Middleware
+// Body Parser Middleware
 app.use(bodyParser.json())
-app.use(bodyParser.urlencoded({extended:true}))
+app.use(bodyParser.urlencoded({extended: true}))
 
-/* View Engine and Templates */
+// Cookie Parser Middleware
+app.use(cookieParser())
+
+/* ***********************
+ * View Engine and Templates
+ *************************/
 app.set("view engine", "ejs")
 app.use(expressLayouts)
 app.set("layout", "./layouts/layout")
@@ -50,15 +57,18 @@ app.set("layout", "./layouts/layout")
 /* ***********************
  * Routes
  *************************/
-app.use(express.static('public'));
+app.use(express.static('public'))
+
+// JWT Token Check Middleware
+app.use(utilities.checkJWTToken)
 
 // Index route
 app.get("/", utilities.handleErrors(baseController.buildHome))
 
-//inventory routes
+// Inventory routes
 app.use('/inv', inventoryRoute)
 
-//account routes
+// Account routes
 app.use('/account', accountRoute)
 
 // Intentional Error Route - for testing error handling
@@ -66,11 +76,19 @@ app.get("/trigger-error", utilities.handleErrors(async (req, res, next) => {
   throw new Error("Error 404")
 }))
 
+/* ***********************
+ * Error Handlers
+ * (These must be LAST)
+ *************************/
+// 404 Handler
 app.use(async (req, res, next) => {
-  next({status: 404, message: 'Sorry, we appear to have lost that page.'
+  next({
+    status: 404, 
+    message: 'Sorry, we appear to have lost that page.'
   })
 })
 
+// Global Error Handler
 app.use(async (err, req, res, next) => {
   let nav = await utilities.getNav()
   console.error(`Error at: "${req.originalUrl}": ${err.message}`)

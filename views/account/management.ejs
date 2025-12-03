@@ -1,0 +1,17 @@
+<% if (title) { %>
+  <h1><%= title %></h1>
+<% } else {
+  res.locals.title = "Account Management"
+} %>
+
+<%- messages() %>
+
+<div class="account-management">
+  <% if (locals.loggedin && locals.accountData) { %>
+    <h2>Welcome <%= accountData.account_firstname %></h2>
+    <p>You're logged in</p>
+  <% } else { %>
+    <h2>Welcome</h2>
+    <p>Please log in to access your account.</p>
+  <% } %>
+</div>
