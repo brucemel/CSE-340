@@ -86,13 +86,13 @@ invCont.addClassification = async function (req, res) {
 
   if (result) {
     nav = await utilities.getNav()
-    const classificationSelect = await utilities.buildClassificationList()  // ← AGREGADO
+    const classificationSelect = await utilities.buildClassificationList()  
     req.flash("notice", `${classification_name} classification was successfully added.`)
     res.status(201).render("./inventory/management", {
       title: "Vehicle Management",
       nav,
       errors: null,
-      classificationSelect,  // ← AGREGADO
+      classificationSelect,  
     })
   } else {
     req.flash("notice", "Sorry, adding the classification failed.")
@@ -151,13 +151,13 @@ invCont.addInventory = async function (req, res) {
 
   if (result) {
     nav = await utilities.getNav()
-    const classificationSelect = await utilities.buildClassificationList()  // ← AGREGADO
+    const classificationSelect = await utilities.buildClassificationList() 
     req.flash("notice", `The ${inv_make} ${inv_model} was successfully added.`)
     res.status(201).render("./inventory/management", {
       title: "Vehicle Management",
       nav,
       errors: null,
-      classificationSelect,  // ← AGREGADO
+      classificationSelect, 
     })
   } else {
     let classificationList = await utilities.buildClassificationList(classification_id)

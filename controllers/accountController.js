@@ -176,13 +176,10 @@ async function updateAccount(req, res, next) {
   )
 
   if (updateResult) {
-    // Obtener los datos actualizados de la base de datos
     const updatedAccountData = await accountModel.getAccountById(account_id)
     
-    // Crear nuevo JWT token con los datos actualizados
     const accessToken = jwt.sign(updatedAccountData, process.env.ACCESS_TOKEN_SECRET, { expiresIn: 3600 * 1000 })
     
-    // Actualizar la cookie con el nuevo token
     if (process.env.NODE_ENV === 'development') {
       res.cookie("jwt", accessToken, { httpOnly: true, maxAge: 3600 * 1000 })
     } else {

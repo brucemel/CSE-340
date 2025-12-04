@@ -62,7 +62,7 @@ validate.inventoryRules = () => {
       .notEmpty()
       .withMessage("Description is required."),
 
-    body("inv_img")  // ← inv_img (correcto)
+    body("inv_img")  
       .trim()
       .notEmpty()
       .withMessage("Image path is required."),
@@ -104,7 +104,7 @@ validate.checkInventoryData = async (req, res, next) => {
     inv_make, 
     inv_model, 
     inv_description, 
-    inv_img,  // ← inv_img (correcto)
+    inv_img,  
     inv_thumbnail, 
     inv_price, 
     inv_year, 
@@ -127,7 +127,7 @@ validate.checkInventoryData = async (req, res, next) => {
       inv_make,
       inv_model,
       inv_description,
-      inv_img,  // ← inv_img (correcto)
+      inv_img,  
       inv_thumbnail,
       inv_price,
       inv_year,
@@ -149,7 +149,7 @@ validate.checkUpdateData = async (req, res, next) => {
     inv_model, 
     inv_year,
     inv_description,
-    inv_img,  // ← CAMBIO AQUÍ
+    inv_img,  
     inv_thumbnail,
     inv_price,
     inv_miles,
@@ -172,7 +172,7 @@ validate.checkUpdateData = async (req, res, next) => {
       inv_model,
       inv_year,
       inv_description,
-      inv_img,  // ← CAMBIO AQUÍ
+      inv_img, 
       inv_thumbnail,
       inv_price,
       inv_miles,

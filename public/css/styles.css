@@ -465,9 +465,10 @@ select[name="classification_id"] {
   width: 70%;
 }
 
-#success{
+.success{
   background: green;
-  text-decoration: none;
+  list-style: none;
+  color: white;
 }
 
 .account-update-container{

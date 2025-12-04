@@ -142,19 +142,16 @@ validate.updateAccountRules = () => {
         console.log('account_id (current user):', account_id)
         console.log('existingAccount:', existingAccount)
         
-        // Si NO existe ninguna cuenta con ese email, está OK
         if (!existingAccount) {
           console.log('Email does not exist - OK')
           return true
         }
         
-        // Si existe una cuenta con ese email
         if (existingAccount.account_id === account_id) {
-          // Es el mismo usuario, está OK
+
           console.log('Email belongs to same user - OK')
           return true
         } else {
-          // Es otro usuario, ERROR
           console.log('Email belongs to different user - ERROR')
           throw new Error("Email already exists. Please use a different email.")
         }
