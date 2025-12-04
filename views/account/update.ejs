@@ -1,0 +1,87 @@
+<% if (title) { %>
+    <h1>
+        <%= title %>
+    </h1>
+    <% } else { res.locals.title="Edit Account" } %>
+
+        <% if (typeof errors !=='undefined' && errors) { %>
+            <ul class="notice">
+                <% errors.array().forEach(error=> { %>
+                    <li>
+                        <%= error.msg %>
+                    </li>
+                    <% }) %>
+            </ul>
+            <% } %>
+
+                <%- messages() %>
+
+                    <div class="account-update-container">
+
+                        <!-- FORM 1: Update Account Information -->
+                        <h2>Update Account Information</h2>
+                        <form id="updateAccountForm" action="/account/update" method="post">
+
+                            <label for="account_firstname">First Name:</label>
+                            <input type="text" id="account_firstname" name="account_firstname" required minlength="1"
+                                pattern="[A-Za-z\s]+" title="First name should only contain letters"
+                                value="<%= locals.account_firstname %>">
+
+                            <label for="account_lastname">Last Name:</label>
+                            <input type="text" id="account_lastname" name="account_lastname" required minlength="2"
+                                pattern="[A-Za-z\s]+"
+                                title="Last name should be at least 2 characters and contain only letters"
+                                value="<%= locals.account_lastname %>">
+
+                            <label for="account_email">Email:</label>
+                            <input type="email" id="account_email" name="account_email" required
+                                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                                title="Please enter a valid email address" value="<%= locals.account_email %>">
+
+                            <input type="hidden" name="account_id" value="<%= locals.account_id %>">
+
+                            <button type="submit">Update Account</button>
+                        </form>
+                    </div>
+                    <!-- FORM 2: Change Password -->
+                    <h2>Change Password</h2>
+                    <p class="password-requirements">
+                        Passwords must be at least 12 characters and contain at least 1 number, 1 capital letter and
+                        1
+                        special character.
+                    </p>
+                    <p class="password-note">Note: Your original password will be changed.</p>
+
+                    <form id="changePasswordForm" action="/account/change-password" method="post">
+
+                        <label for="account_password">New Password:</label>
+                        <input type="password" id="account_password" name="account_password" required minlength="12"
+                            pattern="^(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])(?=.{12,}).+$">
+
+                        <span class="password-hint">
+                            Passwords must be minimum of 12 characters and include 1 capital letter, 1 number and 1
+                            special character.
+                        </span>
+
+                        <button type="button" id="showPasswordBtn">Show Password</button>
+
+                        <input type="hidden" name="account_id" value="<%= locals.account_id %>">
+
+                        <button type="submit">Change Password</button>
+                    </form>
+
+                    <script>
+                        // Show/Hide Password
+                        const showPasswordBtn = document.getElementById('showPasswordBtn');
+                        const passwordInput = document.getElementById('account_password');
+
+                        showPasswordBtn.addEventListener('click', function () {
+                            if (passwordInput.type === 'password') {
+                                passwordInput.type = 'text';
+                                showPasswordBtn.textContent = 'Hide Password';
+                            } else {
+                                passwordInput.type = 'password';
+                                showPasswordBtn.textContent = 'Show Password';
+                            }
+                        });
+                    </script>

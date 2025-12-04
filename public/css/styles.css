@@ -451,6 +451,72 @@ select[name="classification_id"] {
   background-color: #f8f9fa;
 }
 
+#deleteForm{
+  display: grid;
+  border: 2px solid white;
+  padding: 5px;
+}
+
+#deleteForm label{
+  color: black;
+}
+
+#deleteForm input{
+  width: 70%;
+}
+
+#success{
+  background: green;
+  text-decoration: none;
+}
+
+.account-update-container{
+  width: 70%;
+}
+
+#updateAccountForm{
+  display: grid;
+}
+
+#updateAccountForm label{
+  color: black;
+}
+
+#updateAccountForm input{
+  width: 40%;
+}
+
+.account-update-container button{
+  width: 30%;
+  background: #007ea4;
+  margin: 5px;
+}
+
+#changePasswordForm{
+  display: grid;
+}
+
+#changePasswordForm input{
+  width: 40%;
+}
+
+#changePasswordForm button{
+  width: 20%;
+  background: #007ea4;
+  margin: 5px;
+}
+
+#showPasswordBtn{
+  color: white;
+  border: #007ea4;
+  border-radius: 5px;
+  padding: 1%;
+}
+
+#changePasswordForm label{
+  color: black;
+}
+
 /* ============================================ */
 /* RESPONSIVE DESIGN - Media Queries */
 /* ============================================ */

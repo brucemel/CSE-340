@@ -1,0 +1,61 @@
+<% if (title) { %>
+  <h1><%= title %></h1>
+<% } else {
+  res.locals.title = "Delete Vehicle"
+} %>
+
+<%- messages() %>
+
+<div class="add-inventory-container">
+  <p class="field-instruction">CONFIRM DELETION - THE DELETE IS PERMANENT.</p>
+  
+  <form id="deleteForm" action="/inv/delete" method="post">
+      
+      <!-- Make -->
+      <label for="inv_make">Make</label>
+      <input 
+        type="text" 
+        id="inv_make" 
+        class="inputinv"
+        name="inv_make" 
+        readonly
+        value="<%= locals.inv_make %>">
+      
+      <!-- Model -->
+      <label for="inv_model">Model</label>
+      <input 
+        type="text" 
+        id="inv_model" 
+        class="inputinv"
+        name="inv_model" 
+        readonly
+        value="<%= locals.inv_model %>">
+      
+      <!-- Year -->
+      <label for="inv_year">Year</label>
+      <input 
+        type="number" 
+        id="inv_year" 
+        class="inputnumbinv"
+        name="inv_year" 
+        readonly
+        value="<%= locals.inv_year %>">
+      
+      <!-- Price -->
+      <label for="inv_price">Price</label>
+      <input 
+        type="number" 
+        id="inv_price" 
+        class="inputnumbinv"
+        name="inv_price" 
+        readonly
+        step="0.01"
+        value="<%= locals.inv_price %>">
+      
+      <button class="botoninvsu" type="submit" style="background-color: #dc3545;">Delete Vehicle</button>
+      
+      <input type="hidden" name="inv_id" value="<%= locals.inv_id %>">
+
+  </form>
+
+</div>

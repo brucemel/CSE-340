@@ -29,4 +29,28 @@ router.post(
 // Default account route - Account Management (PROTECTED)
 router.get("/", utilities.checkLogin, utilities.handleErrors(accountController.buildAccountManagement))
 
+// Logout route
+router.get("/logout", utilities.handleErrors(accountController.logout))
+
+// Route to build account update view (GET)
+router.get("/update/:account_id", utilities.checkLogin, utilities.handleErrors(accountController.buildAccountUpdate))
+
+// Route to process account update (POST)
+router.post(
+  "/update",
+  utilities.checkLogin,
+  regValidate.updateAccountRules(),
+  regValidate.checkUpdateData,
+  utilities.handleErrors(accountController.updateAccount)
+)
+
+// Route to process password change (POST)
+router.post(
+  "/change-password",
+  utilities.checkLogin,
+  regValidate.changePasswordRules(),
+  regValidate.checkPasswordData,
+  utilities.handleErrors(accountController.changePassword)
+)
+
 module.exports = router
