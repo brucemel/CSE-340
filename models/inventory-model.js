@@ -140,7 +140,6 @@ async function deleteInventoryItem(inv_id) {
     const data = await pool.query(sql, [inv_id])
     return data
   } catch (error) {
-    // CORREGIDO: Usar throw en lugar de solo crear el Error
     throw new Error("Delete Inventory Error")
   }
 }

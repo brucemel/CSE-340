@@ -534,13 +534,11 @@ select[name="classification_id"] {
 
 .star {
   color: #ccc;
-  /* estrella vacía */
   font-size: 1.2rem;
 }
 
 .star.filled {
   color: gold;
-  /* estrella llena */
 }
 
 .form-group-rating-group label {
@@ -560,16 +558,13 @@ select[name="classification_id"] {
   display: flex;
   gap: 5px;
   justify-content: center;
-  /* ✅ CENTRA horizontalmente */
   align-items: center;
-  /* ✅ CENTRA verticalmente */
   flex-direction: row-reverse;
 }
 
 .star-rating label {
   font-size: 2rem;
   color: #ccc;
-  /* estrella vacía */
   cursor: pointer;
   transition: color 0.2s ease-in-out;
 }
@@ -632,6 +627,138 @@ select[name="classification_id"] {
 .h1reviewtitle {
   text-align: center;
   margin-bottom: 30px;
+}
+
+/* Reviews Section */
+.reviews-section {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 1rem;
+}
+
+.reviews-section h2 {
+    margin-bottom: 1rem;
+}
+
+/* Rating Summary */
+.rating-summary {
+    margin: 1rem 0;
+}
+
+/* Stars */
+.stars {
+    display: inline-block;
+}
+
+.star {
+    font-size: 1.2rem;
+    color: #ddd;
+}
+
+.star.filled {
+    color: #ffc107;
+}
+
+/* Button */
+.btn-review {
+    display: inline-block;
+    padding: 8px 16px;
+    background: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.btn-review:hover {
+    background: #0056b3;
+}
+
+/* Review Card */
+.review-card {
+    margin: 20px 0;
+    padding: 15px;
+    border: 1px solid #ddd;
+    background: #f9f9f9;
+    border-radius: 4px;
+}
+
+.review-author {
+    margin: 0 0 8px 0;
+    color: #333;
+}
+
+.review-text {
+    margin: 8px 0;
+    line-height: 1.5;
+}
+
+.review-actions {
+    margin-top: 8px;
+    font-size: 0.9rem;
+}
+
+.review-actions a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.review-actions a:hover {
+    text-decoration: underline;
+}
+
+.average-rating{
+  font-size: 30px;
+}
+
+#starranked{
+  font-size: 45px;
+}
+
+.btn-add-review{
+  text-decoration: none;
+  color: white;
+  background-color: #0aa6d4;
+  font-size: 20px;
+  border-radius: 8px;
+  padding: 3px;
+}
+
+.btn-add-review:hover {
+  color: yellow;
+}
+
+#loginreview{
+  text-decoration: none;
+  color: white;
+  background-color: #0aa6d4;
+  font-size: 20px;
+  border-radius: 8px;
+  padding: 3px;
+}
+
+#loginreview:hover {
+  color: yellow;
+}
+
+.reviewer-info{
+  display: flex;
+}
+
+.reviewer-avatar{
+  background-color: #0aa6d4;
+  border: #0aa6d4;
+  border-radius: 100%;
+  padding: 10px;
+  text-align: center;
+  font-weight: bold;
+  color: white;
+  margin-top: -8px;
+  margin-left: -8px;
+  margin-right: 10px;
+}
+
+.star{
+  font-size: 30px;
 }
 
 /* ============================================ */

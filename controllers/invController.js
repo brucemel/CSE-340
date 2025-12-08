@@ -187,7 +187,6 @@ invCont.addInventory = async function (req, res) {
 invCont.getInventoryJSON = async (req, res, next) => {
   const classification_id = parseInt(req.params.classification_id)
   const invData = await invModel.getInventoryByClassificationId(classification_id)
-  // CORREGIDO: Verificar si hay datos antes de acceder a propiedades
   if (invData && invData.length > 0) {
     return res.json(invData)
   } else {
