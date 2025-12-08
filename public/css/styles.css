@@ -1,11 +1,11 @@
 html {
-    background-image: url("../images/site/small_check.png");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    height: 100%;
-    overflow: auto;
+  background-image: url("../images/site/small_check.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  height: 100%;
+  overflow: auto;
 }
 
 /******* Change Box Model ***************/
@@ -15,7 +15,7 @@ html {
   box-sizing: border-box;
 }
 
-body{
+body {
   max-width: 840px;
   margin: auto;
   background: white;
@@ -27,33 +27,33 @@ body{
   font-family: "Raleway", sans-serif;
 }
 
-#top-header{
+#top-header {
   display: flex;
   justify-content: space-between;
 }
 
-.siteName a{
+.siteName a {
   text-decoration: none;
   font-size: 180%;
   color: black;
 }
 
-span a:hover{
+span a:hover {
   color: rgb(167, 167, 4);
   border-bottom: 2px solid rgb(167, 167, 4);
 }
 
-#tools a{
+#tools a {
   text-decoration: none;
   color: black;
 }
 
-#tools a:hover{
+#tools a:hover {
   color: rgb(167, 167, 4);
   border-bottom: 2px solid rgb(167, 167, 4);
 }
 
-.ulnav{
+.ulnav {
   display: flex;
   justify-content: space-between;
   list-style: none;
@@ -63,7 +63,7 @@ span a:hover{
   background: black;
 }
 
-.ulnav a{
+.ulnav a {
   text-decoration: none;
   color: white;
 }
@@ -85,7 +85,7 @@ span a:hover{
   left: 20px;
   background: rgba(255, 255, 255, 0.6);
   padding: 20px;
-  backdrop-filter: blur(0.5px); 
+  backdrop-filter: blur(0.5px);
 }
 
 .hero-box h2 {
@@ -106,49 +106,49 @@ span a:hover{
   background: #007ea4;
 }
 
-.hero-text{
+.hero-text {
   color: #007ea4;
 }
 
 .upgrades-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
 }
 
-.upgrade-card{
+.upgrade-card {
   text-align: center;
 }
 
-.upgrade-image{
+.upgrade-image {
   background-color: #00a6d6;
   max-width: 90%;
   max-height: 100px;
 }
 
-.twoparts{
+.twoparts {
   display: flex;
   justify-content: space-between;
 }
 
-.cardone{
+.cardone {
   padding-left: 10px;
 }
 
-.cardtwo{
+.cardtwo {
   padding-right: 40px;
 }
 
-.points li{
+.points li {
   padding: 7px;
 }
 
-#inv-display{
+#inv-display {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
 }
 
-.cardscar{
+.cardscar {
   border: solid 1px rgba(0, 0, 0, 0.204);
   list-style: none;
   text-align: center;
@@ -156,51 +156,51 @@ span a:hover{
   border-radius: 5px;
 }
 
-.cardscar img{
+.cardscar img {
   width: 100%;
   border-radius: 5px;
 }
 
-hr{
+hr {
   border-bottom: solid 3px black;
 }
 
-.errormessage img{
+.errormessage img {
   width: 100%;
 }
 
-.vehicle-detail{
+.vehicle-detail {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
 }
 
-.vehicle-image img{
+.vehicle-image img {
   width: 100%;
   padding: 10px;
   margin-bottom: 5px;
 }
 
-.vehicle-info{
+.vehicle-info {
   margin-top: -25px;
 }
 
-.vehicle-price{
+.vehicle-price {
   background: rgba(0, 0, 0, 0.078);
   padding: 10px;
 }
 
-.vehicle-color{
+.vehicle-color {
   background: rgba(0, 0, 0, 0.078);
   padding: 10px;
 }
 
-.notice{
+.notice {
   color: red;
   font-style: italic;
   font-weight: bold;
 }
 
-#loginForm{
+#loginForm {
   border: 1px solid black;
   display: grid;
   width: 50%;
@@ -212,14 +212,14 @@ hr{
   margin-bottom: 20px;
 }
 
-input{
+input {
   width: 98%;
   padding: 8px;
   border: 1px solid black;
   border-radius: 5px;
 }
 
-#loginForm button{
+#loginForm button {
   width: 30%;
   margin: auto;
   padding: 5px;
@@ -228,22 +228,22 @@ input{
   margin-top: 5px;
 }
 
-.signup{
+.signup {
   margin-top: -55px;
   text-align: center;
   color: white;
 }
 
-.signup a{
+.signup a {
   color: white;
 }
 
-label{
+label {
   color: white;
   padding: 5px
 }
 
-.divre{
+.divre {
   width: 50%;
   margin: auto;
   background-color: #00a6d6;
@@ -252,27 +252,27 @@ label{
   border-radius: 5px;
 }
 
-#registrationForm{
+#registrationForm {
   display: grid;
   border: 2.5px solid white;
   padding: 10px;
 }
 
-.emcabezado{
+.emcabezado {
   font-style: italic;
   font-weight: bold;
 }
 
-.labelre{
+.labelre {
   color: black;
   font-weight: bold;
 }
 
-#pswdBtn{
+#pswdBtn {
   width: 20%;
 }
 
-#botonreg{
+#botonreg {
   width: 20%;
   padding: 10px;
   margin: 5px;
@@ -286,15 +286,15 @@ label{
 
 /* Password requirements text */
 .password-requirements {
-    display: block;
-    font-size: 12px;
-    color: #000;
-    margin-bottom: 8px;
-    margin-top: -5px;
-    font-style: italic;
-    line-height: 1.4;
-    font-weight: bold;
-    margin-top: 5px;
+  display: block;
+  font-size: 12px;
+  color: #000;
+  margin-bottom: 8px;
+  margin-top: -5px;
+  font-style: italic;
+  line-height: 1.4;
+  font-weight: bold;
+  margin-top: 5px;
 }
 
 input {
@@ -324,7 +324,7 @@ input:not(:focus) {
   border: 1px solid #ccc;
 }
 
-.add-inventory-container{
+.add-inventory-container {
   width: 55%;
   margin: auto;
   background-color: #00a6d6;
@@ -333,45 +333,45 @@ input:not(:focus) {
   border-radius: 7px;
 }
 
-#addInventoryForm{
+#addInventoryForm {
   display: grid;
   border: 1px solid white;
   padding: 5px;
 }
 
-#addInventoryForm label{
+#addInventoryForm label {
   color: black;
 }
 
-#addInventoryForm input{
+#addInventoryForm input {
   padding: 1px;
   border: 1px;
   border-radius: 0;
 }
 
-#classificationList{
+#classificationList {
   width: 40%;
 }
 
-.inputinv{
+.inputinv {
   width: 60%;
 }
 
-.inputimginv{
+.inputimginv {
   width: 92%;
 }
 
-.inputnumbinv{
+.inputnumbinv {
   width: 30%;
 }
 
-.botoninvsu{
+.botoninvsu {
   margin-top: 15px;
   width: 25%;
   padding: 0;
 }
 
-#divclassification{
+#divclassification {
   width: 50%;
   margin: auto;
   background-color: #007ea4;
@@ -380,40 +380,40 @@ input:not(:focus) {
   padding: 10px;
 }
 
-#addClassificationForm{
-  border:1px solid white;
+#addClassificationForm {
+  border: 1px solid white;
   padding: 5px;
   display: grid;
 }
 
-#addClassificationForm label{
+#addClassificationForm label {
   color: black;
   font-weight: bold;
 }
 
-.requirement{
+.requirement {
   font-style: italic;
 }
 
-#classification_name{
+#classification_name {
   margin-bottom: 20px;
   width: 50%;
 }
 
-#addClassificationForm button{
+#addClassificationForm button {
   border-radius: 5px;
   width: 40%;
 }
 
-.field-instruction{
+.field-instruction {
   font-style: italic;
 }
 
-.thclass{
+.thclass {
   padding: 1.5%;
 }
 
-#classificationList{
+#classificationList {
   width: 25%;
   background-color: rgba(56, 54, 54, 0.155);
   padding: 5px;
@@ -421,7 +421,7 @@ input:not(:focus) {
   border-radius: 5px;
 }
 
-#add-inventory-container{
+#add-inventory-container {
   width: 55%;
   margin: auto;
   background-color: #00a6d6;
@@ -429,19 +429,19 @@ input:not(:focus) {
   border-radius: 5px;
 }
 
-#updateForm{
+#updateForm {
   display: grid;
   border: 1px solid white;
   padding: 5px;
 
 }
 
-#updateForm label{
+#updateForm label {
   color: black;
   font-weight: bold;
 }
 
-.field-instruction{
+.field-instruction {
   font-weight: bold;
   padding-top: 20px;
 }
@@ -451,71 +451,187 @@ select[name="classification_id"] {
   background-color: #f8f9fa;
 }
 
-#deleteForm{
+#deleteForm {
   display: grid;
   border: 2px solid white;
   padding: 5px;
 }
 
-#deleteForm label{
+#deleteForm label {
   color: black;
 }
 
-#deleteForm input{
+#deleteForm input {
   width: 70%;
 }
 
-.success{
+.success {
   background: green;
   list-style: none;
   color: white;
 }
 
-.account-update-container{
+.account-update-container {
   width: 70%;
 }
 
-#updateAccountForm{
+#updateAccountForm {
   display: grid;
 }
 
-#updateAccountForm label{
+#updateAccountForm label {
   color: black;
 }
 
-#updateAccountForm input{
+#updateAccountForm input {
   width: 40%;
 }
 
-.account-update-container button{
+.account-update-container button {
   width: 30%;
   background: #007ea4;
   margin: 5px;
 }
 
-#changePasswordForm{
+#changePasswordForm {
   display: grid;
 }
 
-#changePasswordForm input{
+#changePasswordForm input {
   width: 40%;
 }
 
-#changePasswordForm button{
+#changePasswordForm button {
   width: 20%;
   background: #007ea4;
   margin: 5px;
 }
 
-#showPasswordBtn{
+#showPasswordBtn {
   color: white;
   border: #007ea4;
   border-radius: 5px;
   padding: 1%;
 }
 
-#changePasswordForm label{
+#changePasswordForm label {
   color: black;
+}
+
+.titleformreview {
+  text-align: center;
+}
+
+.vehiclereviewedit {
+  width: 90%;
+}
+
+.review-container {
+  width: 60%;
+  margin: auto;
+  text-align: center;
+}
+
+.star {
+  color: #ccc;
+  /* estrella vacía */
+  font-size: 1.2rem;
+}
+
+.star.filled {
+  color: gold;
+  /* estrella llena */
+}
+
+.form-group-rating-group label {
+  color: black;
+  font-weight: bold;
+}
+
+.star-rating label {
+  color: black;
+}
+
+.star-rating input[type="radio"] {
+  display: none;
+}
+
+.star-rating {
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+  /* ✅ CENTRA horizontalmente */
+  align-items: center;
+  /* ✅ CENTRA verticalmente */
+  flex-direction: row-reverse;
+}
+
+.star-rating label {
+  font-size: 2rem;
+  color: #ccc;
+  /* estrella vacía */
+  cursor: pointer;
+  transition: color 0.2s ease-in-out;
+}
+
+.star-rating input:checked~label,
+.star-rating label:hover,
+.star-rating label:hover~label {
+  color: gold;
+}
+
+.form-group {
+  display: grid;
+  width: 80%;
+  margin: auto;
+}
+
+#review_text {
+  margin-top: -25px;
+  height: 60px;
+}
+
+.char-count {
+  padding-bottom: 10px;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.btn-primary {
+  background-color: #00a6d6;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 15px;
+  border: #007ea4;
+  padding: 5px;
+}
+
+.btn-secondary {
+  text-decoration: none;
+  background-color: red;
+  border: red;
+  font-weight: bold;
+  padding: 5px;
+  color: black;
+}
+
+.btn-danger {
+  text-decoration: none;
+  background-color: orange;
+  border: orange;
+  font-weight: bold;
+  padding: 5px;
+  color: black;
+}
+
+.form-group-rating-group label {
+  font-weight: bold;
+  color: black;
+}
+
+.h1reviewtitle {
+  text-align: center;
+  margin-bottom: 30px;
 }
 
 /* ============================================ */
@@ -564,7 +680,8 @@ select[name="classification_id"] {
     gap: 30px;
   }
 
-  .cardone, .cardtwo {
+  .cardone,
+  .cardtwo {
     padding: 0 10px;
   }
 
@@ -572,7 +689,7 @@ select[name="classification_id"] {
     gap: 10px;
   }
 
-  .hero-img{
+  .hero-img {
     width: 100%;
   }
 
@@ -582,12 +699,14 @@ select[name="classification_id"] {
     left: 20px;
     background: rgba(255, 255, 255, 0.6);
     padding: 20px;
-    backdrop-filter: blur(0.5px); 
+    backdrop-filter: blur(0.5px);
   }
+
   .twoparts {
-  display: flex;
-  flex-direction: column; 
-}
+    display: flex;
+    flex-direction: column;
+  }
+
   .cardone {
     order: 2;
   }
@@ -601,15 +720,15 @@ select[name="classification_id"] {
     grid-template-columns: repeat(2, 1fr);
     gap: 15px;
   }
-  
-  #inv-display{
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+
+  #inv-display {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
   }
 
-  .vehicle-detail{
-  display: flex;
-  flex-direction: column;
+  .vehicle-detail {
+    display: flex;
+    flex-direction: column;
   }
 }
 
@@ -659,11 +778,11 @@ select[name="classification_id"] {
 
   .twoparts {
     display: flex;
-    flex-direction: column;  
+    flex-direction: column;
   }
 
   .cardone {
-    order: 2; 
+    order: 2;
   }
 
   .cardtwo {
@@ -676,48 +795,124 @@ select[name="classification_id"] {
     gap: 15px;
   }
 
-  #inv-display{
-  display: grid;
-  grid-template-columns: 1fr;
+  #inv-display {
+    display: grid;
+    grid-template-columns: 1fr;
   }
 
-  .vehicle-detail{
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  .vehicle-detail {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
   }
 
-  .vehicle-image img{
-  width: 100%;
-  padding-right: 5px;
+  .vehicle-image img {
+    width: 100%;
+    padding-right: 5px;
   }
 
-  .vehicle-detail{
-  display: flex;
-  flex-direction: column;
+  .vehicle-detail {
+    display: flex;
+    flex-direction: column;
   }
 
-  .divre{
+  .divre {
     width: 75%;
   }
 
-  #loginForm{
+  #loginForm {
     width: 75%;
   }
 
-  #pswdBtn{
+  #pswdBtn {
     width: 30%
   }
 
-  #botonreg{
+  #botonreg {
     width: 30%;
   }
 
-  #addClassificationForm button{
-  border-radius: 5px;
-  width: 55%;
+  #addClassificationForm button {
+    border-radius: 5px;
+    width: 55%;
   }
 
-  .botoninvsu{
+  .botoninvsu {
     width: 30%;
+  }
+
+  .form-buttons {
+    display: grid;
+  }
+
+  .btn-secondary {
+    text-decoration: none;
+    background-color: red;
+    border: red;
+    font-weight: bold;
+    padding: 5px;
+    color: black;
+    border-radius: 10px;
+    margin-top: 5px;
+  }
+
+  .btn-danger {
+    text-decoration: none;
+    background-color: orange;
+    border: orange;
+    font-weight: bold;
+    padding: 5px;
+    color: black;
+    border-radius: 10px;
+    margin-top: 5px;
+  }
+
+  #review_text {
+    height: 100px;
+    width: 190px;
+    margin-top: -50px;
+  }
+
+  .star {
+    color: #ccc;
+    /* estrella vacía */
+    font-size: 1.2rem;
+  }
+
+  .star.filled {
+    color: gold;
+    /* estrella llena */
+  }
+
+  .form-group-rating-group label {
+    color: black;
+    font-weight: bold;
+  }
+
+  .star-rating input[type="radio"] {
+    display: none;
+  }
+
+  .star-rating {
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+    /* ✅ CENTRA horizontalmente */
+    align-items: center;
+    /* ✅ CENTRA verticalmente */
+    flex-direction: row-reverse;
+  }
+
+  .star-rating label {
+    font-size: 2rem;
+    color: rgba(124, 107, 107, 0.122);
+    /* estrella vacía */
+    cursor: pointer;
+    transition: color 0.2s ease-in-out;
+  }
+
+  .star-rating input:checked~label,
+  .star-rating label:hover,
+  .star-rating label:hover~label {
+    color: gold;
   }
 }

@@ -1,3 +1,15 @@
 <h1><%= title %></h1>
-<%- detail %>
-  
+
+<%- messages() %>
+
+<div>
+  <%- detail %>
+</div>
+
+<!-- SECCIÓN DE RESEÑAS -->
+<%- include('../partials/reviews-section', {
+  invData: invData,
+  reviews: reviews,
+  avgRating: avgRating,
+  accountData: locals.accountData || null
+}) %>

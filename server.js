@@ -18,6 +18,8 @@ const session = require('express-session')
 const pool = require('./database')
 const bodyParser = require("body-parser")
 const cookieParser = require("cookie-parser")
+// Routes
+const reviewRoute = require("./routes/reviewRoute") 
 
 /* ***********************
  * Middleware
@@ -28,8 +30,8 @@ app.use(session({
     pool,
   }),
   secret: process.env.SESSION_SECRET,
-  resave: true,
-  saveUninitialized: true,
+  resave: false,              
+  saveUninitialized: false,   
   name: 'sessionId',
 }))
 
@@ -71,6 +73,8 @@ app.use('/inv', inventoryRoute)
 // Account routes
 app.use('/account', accountRoute)
 
+app.use("/review", reviewRoute) 
+
 // Intentional Error Route - for testing error handling
 app.get("/trigger-error", utilities.handleErrors(async (req, res, next) => {
   throw new Error("Error 404")
@@ -83,7 +87,7 @@ app.get("/trigger-error", utilities.handleErrors(async (req, res, next) => {
 // 404 Handler
 app.use(async (req, res, next) => {
   next({
-    status: 404, 
+    status: 404,
     message: 'Sorry, we appear to have lost that page.'
   })
 })
