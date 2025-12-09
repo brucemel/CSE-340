@@ -710,7 +710,7 @@ select[name="classification_id"] {
   font-size: 30px;
 }
 
-#starranked{
+.stars-display span{
   font-size: 45px;
 }
 

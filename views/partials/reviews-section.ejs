@@ -6,7 +6,7 @@
             <div class="average-rating">
                 <div class="stars-display">
                     <% for(let i=1; i <=5; i++) { %>
-                        <span id="starranked" class="star <%= i <= Math.round(avgRating.avg_rating) ? 'filled' : '' %>">★</span>
+                        <span class="star <%= i <= Math.round(avgRating.avg_rating) ? 'filled' : '' %>">★</span>
                         <% } %>
                 </div>
                 <span class="rating-text">
